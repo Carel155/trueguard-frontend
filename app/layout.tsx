@@ -6,6 +6,7 @@ import PageHeader from "@/components/header";
 import { GlobalStateProvider } from "@/contexts/global-state";
 import ReactQueryProvider from "@/contexts/query";
 import { Toaster } from "@/components/ui/sonner";
+import Tracking from "@/components/tracking";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       <GlobalStateProvider>
         <html lang="en">
           <body className={inter.className}>
+            <Tracking />
             <PageHeader />
             <main>{children}</main>
             <Toaster position="bottom-left" />
