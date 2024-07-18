@@ -11,20 +11,37 @@ const PageHeader = () => {
   const { state, setState } = useGlobalState();
 
   return (
-    <div className="mx-auto max-w-screen-xl px-3 py-6">
+    <div className="mx-auto max-w-screen-xl px-3 py-6 bg-white">
       <div className="flex flex-wrap items-center justify-between w-full">
         <div>
           <Link href="/">
-            <div className="flex items-center text-2xl font-semibold">TrueGuard</div>
+            <picture>
+              <img
+                src="https://ik.imagekit.io/trueguard/static/trueguard-black.png?updatedAt=1721324855994"
+                className="h-7"
+                alt="trueguard-logo-black"
+              />
+            </picture>
           </Link>
         </div>
-        <div>
-          <NavigationMenu>
-            <NavigationMenuList></NavigationMenuList>
-          </NavigationMenu>
-        </div>
+        <div className="flex">
+          <div className="mr-6">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem className="mr-2">
+                  <Link href="/docs" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>Features</NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/docs" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>FAQ</NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
-        <div>
           <Button onClick={() => setState({ ...state, accessDrawerOpen: true })}>Get Started</Button>
         </div>
       </div>

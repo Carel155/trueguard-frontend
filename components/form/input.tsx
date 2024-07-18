@@ -3,16 +3,16 @@ import { useFormContext } from "react-hook-form";
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input as ShadcnInput } from "../ui/input";
-import { Textarea } from "../ui/textarea";
 
 type InputProps = {
   name: string;
   placeholder: string;
   type: string;
+  className?: string;
   label?: string;
 };
 
-const Input = ({ name, label, placeholder, type }: InputProps) => {
+const Input = ({ name, label, placeholder, className, type }: InputProps) => {
   const form = useFormContext();
 
   return (
@@ -23,7 +23,7 @@ const Input = ({ name, label, placeholder, type }: InputProps) => {
         <FormItem>
           {label && <FormLabel>{label}</FormLabel>}
           <FormControl>
-            <ShadcnInput placeholder={placeholder} type={type} {...field} />
+            <ShadcnInput placeholder={placeholder} type={type} className={className} {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>

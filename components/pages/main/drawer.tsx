@@ -66,9 +66,9 @@ const GetAccessDrawer = forwardRef<ChildHandle>((props, ref) => {
         <DrawerContent>
           <div className="mx-auto w-full max-w-sm">
             <DrawerHeader>
-              <DrawerTitle>TrueGuard early access</DrawerTitle>
+              <DrawerTitle>Trueguard early access</DrawerTitle>
               <DrawerDescription>
-                TrueGuard is currently in early access to collect real-world data and customer feedback. Each request is manually reviewed and
+                Trueguard is currently in early access to collect real-world data and customer feedback. Each request is manually reviewed and
                 followed up with a personal contact.
               </DrawerDescription>
             </DrawerHeader>

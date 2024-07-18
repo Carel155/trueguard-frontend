@@ -7,13 +7,14 @@ import { GlobalStateProvider } from "@/contexts/global-state";
 import ReactQueryProvider from "@/contexts/query";
 import { Toaster } from "@/components/ui/sonner";
 import Tracking from "@/components/tracking";
+import PageFooter from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TrueGuard - Automated defense for your SaaS",
+  title: "Trueguard - Automated defense for your SaaS",
   description:
-    "TrueGuard delivers advanced protection against malicious users for your SaaS. Automatically blocking free-tier abusers, automated bots, and other threats.",
+    "Trueguard delivers advanced protection against malicious users for your SaaS. Automatically blocking free-tier abusers, automated bots, and other threats.",
 };
 
 export default function RootLayout({
@@ -29,6 +30,7 @@ export default function RootLayout({
             <Tracking />
             <PageHeader />
             <main>{children}</main>
+            <PageFooter />
             <Toaster position="bottom-left" />
           </body>
         </html>

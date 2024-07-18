@@ -39,7 +39,7 @@ const MainPageHero = ({ openDrawerWithEmail }: MainPageHeroProps) => {
             />
           </h1>
           <p className="mt-3 text-xl text-muted-foreground">
-            TrueGuard delivers advanced protection against malicious users for your SaaS. Save time and money by automatically blocking free-tier
+            Trueguard delivers advanced protection against malicious users for your SaaS. Save time and money by automatically blocking free-tier
             abusers, automated bots, and other threats.
           </p>
           <div className="mt-5 lg:mt-8 flex flex-col sm:items-center gap-2 sm:flex-row sm:gap-3">
