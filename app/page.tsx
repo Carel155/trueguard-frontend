@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
-import { Mail, ChevronRight, Network, CircleUser, ScanEye } from "lucide-react";
+import { Mail, ChevronRight, Network, CircleUser, ScanEye, Check } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { FormProvider, useForm } from "react-hook-form";
 
@@ -139,7 +139,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center pt-36 px-5 lg:px-0">
+          <div id="features" className="flex flex-col items-center pt-36 px-5 lg:px-0">
             <div className="flex flex-col items-center max-w-screen-md w-full">
               <Badge className="bg-[#F2D262] hover:bg-[#F2D262] text-black">Features</Badge>
               <h4 className="text-4xl font-bold text-center mt-6">
@@ -271,42 +271,64 @@ const LandingPage = () => {
           <p className="text-3xl font-bold max-w-screen-sm text-center pt-5">success rate, when identifying a suspicious new user.</p>
         </div>
 
-        <div className="flex flex-col items-center pt-10 pb-36 px-5 lg:px-0 bg-foreground w-full">
-          <div className="max-w-screen-xl ">
-            <div className="relative">
-              <picture className="invisible md:visible">
+        <div className="flex flex-col items-center pb-36 px-5 lg:px-0 bg-foreground w-full">
+          <div className="flex flex-col items-center max-w-screen-xl">
+            <div id="pricing" className="flex flex-col items-center pt-36 px-5 lg:px-0">
+              <div className="flex flex-col items-center max-w-screen-md w-full">
+                <Badge className="bg-[#F2D262] hover:bg-[#F2D262] text-black">Pricing</Badge>
+                <h4 className="text-4xl font-bold text-center mt-6">
+                  Trueguard is currently in early access to collect real-world data and customer feedback. Early access is{" "}
+                  <span className="underline underline-offset-4">free of charge.</span>
+                </h4>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center max-w-96 border w-full p-10 rounded-xl mt-36">
+              <p className="text-xl font-bold">Price</p>
+              <p className="text-4xl font-bold pt-5">Free</p>
+              <div className="flex w-full pt-10">
+                <Check className="pr-2" />
+                <p className="text-sm">Email Validation</p>
+              </div>
+              <div className="flex w-full pt-1">
+                <Check className="pr-2" />
+                <p className="text-sm">IP Analysis</p>
+              </div>
+              <div className="flex w-full pt-1">
+                <Check className="text-gray-400 pr-2" />
+                <p className="text-sm text-gray-400">User Fingerprinting (coming soon)</p>
+              </div>
+              <div className="flex w-full pt-1">
+                <Check className="text-gray-400 pr-2" />
+                <p className="text-sm text-gray-400">Continue Monitoring (coming soon)</p>
+              </div>
+
+              <FormField
+                control={form.control}
+                name="secondContactEmail"
+                render={({ field }) => <ShadcnInput placeholder="Enter email" type="email" className="w-full mt-10" {...field} />}
+              />
+              <Button className="bg-accent hover:bg-[#65ad4b] mt-4 w-full text-black" onClick={() => openModalWithEmail("secondContactEmail")}>
+                Request Access
+              </Button>
+            </div>
+
+            <div className="relative pt-36">
+              <picture>
                 <img
                   src="https://ik.imagekit.io/trueguard/static/protect-product.webp?updatedAt=1721325299960"
                   className="rounded-lg"
                   alt="trueguard-get-started"
                 />
               </picture>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-bold invisible md:visible">
-                <p className="[text-shadow:0_0_4px_#000]">Keep your product safe</p>
-              </div>
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full">
-                <div className="flex flex-col items-center bg-accent px-10 py-5 rounded-lg max-w-lg mx-auto">
-                  <p className="text-3xl font-bold">Try it out!</p>
-                  <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 mt-6 w-full">
-                    <FormField
-                      control={form.control}
-                      name="secondContactEmail"
-                      render={({ field }) => (
-                        <>
-                          <ShadcnInput placeholder="Enter email" type="email" className="w-full sm:w-80" {...field} />
-                        </>
-                      )}
-                    />
-                    <Button className="w-full sm:w-auto" onClick={() => openModalWithEmail("secondContactEmail")}>
-                      Request access
-                    </Button>
-                  </div>
-                </div>
+              <div className="absolute bottom-5 left-5 md:bottom-20 md:left-20 text-white font-bold">
+                <p className="text-2xl md:text-5xl [text-shadow:0_0_2px_#000]">Keep your</p>
+                <p className="text-2xl md:text-5xl [text-shadow:0_0_2px_#000] pt-2">business safe.</p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-20 pt-36 max-w-screen-xl w-full">
+          <div id="faq" className="grid grid-cols-1 lg:grid-cols-3 lg:gap-20 pt-36 max-w-screen-xl w-full">
             <div className="flex flex-col items-center text-center lg:text-left lg:items-start w-full">
               <h5 className="text-4xl font-bold">Frequently Asked Questions</h5>
               <p className="pt-10">

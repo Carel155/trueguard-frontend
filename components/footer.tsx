@@ -20,14 +20,19 @@ const PageFooter = () => {
 
         <div className="flex w-full justify-between">
           <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem className="mr-10">
-                <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuList className="space-x-10">
+              <NavigationMenuItem>
+                <Link href="#features" legacyBehavior passHref>
                   <p className="text-white font-bold cursor-pointer">Features</p>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="#pricing" legacyBehavior passHref>
+                  <p className="text-white font-bold cursor-pointer">Pricing</p>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="#faq" legacyBehavior passHref>
                   <p className="text-white font-bold cursor-pointer">FAQ</p>
                 </Link>
               </NavigationMenuItem>

@@ -2,9 +2,24 @@
 
 import React from "react";
 import Link from "next/link";
+import { Menu } from "lucide-react";
 
 import { Button } from "./ui/button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "./ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import useGlobalState from "@/hooks/use-global-state";
 
 const PageHeader = () => {
@@ -24,17 +39,22 @@ const PageHeader = () => {
             </picture>
           </Link>
         </div>
-        <div className="flex">
+        <div className="hidden md:flex">
           <div className="mr-6">
             <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem className="mr-2">
-                  <Link href="/docs" legacyBehavior passHref>
+              <NavigationMenuList className="space-x-2">
+                <NavigationMenuItem>
+                  <Link href="#features" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>Features</NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/docs" legacyBehavior passHref>
+                  <Link href="#pricing" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>Pricing</NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="#faq" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>FAQ</NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -42,7 +62,26 @@ const PageHeader = () => {
             </NavigationMenu>
           </div>
 
-          <Button onClick={() => setState({ ...state, accessDrawerOpen: true })}>Get Started</Button>
+          <Button onClick={() => setState({ ...state, accessDrawerOpen: true })}>Requst access</Button>
+        </div>
+
+        <div className="flex md:hidden">
+          <Button onClick={() => setState({ ...state, accessDrawerOpen: true })} className="mr-4">
+            Requst access
+          </Button>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">
+                <Menu />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuItem>Features</DropdownMenuItem>
+              <DropdownMenuItem>Pricing</DropdownMenuItem>
+              <DropdownMenuItem>FAQ</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>
