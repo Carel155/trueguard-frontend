@@ -48,7 +48,7 @@ const LandingPage = () => {
                 <br />
                 <TypeAnimation
                   className="flex pt-2"
-                  sequence={["Free Tier Abusers", 2500, "Suspicious Accounts", 2500, "Temporary Emails", 2500, "Automated Bots", 2500]}
+                  sequence={["Free Tier Abusers", 2500, "Temporary Emails", 2500, "Suspicious Accounts", 2500, "Automated Bots", 2500]}
                   speed={10}
                   deletionSpeed={15}
                   repeat={Infinity}
@@ -241,8 +241,7 @@ const LandingPage = () => {
                 </div>
                 <p className="pt-6">
                   Trueguard continuously monitors and alerts you about suspicious users. For example, if we fail to automatically detect a temporary
-                  email or if we identify that a user has abused another product, we will notify you via webhooks. This allows you to take action and
-                  limit their access promptly.
+                  email or we find that one person has multiple accounts. This allows you to take action and limit their access promptly.
                 </p>
               </div>
 
