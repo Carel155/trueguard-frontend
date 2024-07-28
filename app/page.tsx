@@ -73,7 +73,7 @@ const LandingPage = () => {
               <Link href="#email-validation" className="flex flex-col border rounded-lg p-8 bg-white hover:bg-[#EFECE8]">
                 <div className="flex items-center">
                   <Mail />
-                  <h3 className="text-md font-bold pl-3">Email validation</h3>
+                  <h3 className="text-md font-bold pl-3">Email Validation</h3>
                 </div>
                 <div className="flex justify-between mt-6">
                   <p className="underline underline-offset-4">Read more</p>

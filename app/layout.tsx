@@ -15,6 +15,15 @@ export const metadata: Metadata = {
   title: "Trueguard - Automated defense for your SaaS",
   description:
     "Trueguard delivers advanced protection against malicious users for your SaaS. Automatically blocking free-tier abusers, automated bots, and other threats.",
+  openGraph: {
+    title: "Trueguard - Automated defense for your SaaS",
+    type: "website",
+    url: "https://trueguard.io",
+    siteName: "Trueguard",
+    description:
+      "Trueguard delivers advanced protection against malicious users for your SaaS. Automatically blocking free-tier abusers, automated bots, and other threats.",
+    images: ["https://ik.imagekit.io/trueguard/static/trueguard-og.jpg?updatedAt=1722187203228"],
+  },
 };
 
 export default function RootLayout({
