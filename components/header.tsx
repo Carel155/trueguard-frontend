@@ -62,7 +62,7 @@ const PageHeader = () => {
             </NavigationMenu>
           </div>
 
-          <Button onClick={() => setState({ ...state, accessDrawerOpen: true })}>Requst access</Button>
+          <Button onClick={() => setState({ ...state, accessDrawerOpen: true })}>Reqeust access</Button>
         </div>
 
         <div className="flex md:hidden">
