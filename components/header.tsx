@@ -67,7 +67,7 @@ const PageHeader = () => {
 
         <div className="flex md:hidden">
           <Button onClick={() => setState({ ...state, accessDrawerOpen: true })} className="mr-4">
-            Requst access
+            Request access
           </Button>
 
           <DropdownMenu>

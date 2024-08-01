@@ -167,7 +167,7 @@ const LandingPage = () => {
                   <h3 className="text-2xl font-bold pl-3">Email validation</h3>
                 </div>
                 <p className="pt-6">
-                  Trueguard tries to identify if user&apos;s email is supicous or temporary, even if it comes from trusted sources like Gmail.
+                  Trueguard tries to identify if user&apos;s email is suspicous or temporary, even if it comes from trusted sources like Gmail.
                   Trueguard employs various techniques, including DNS analysis, a known temporary domain database, AI, and more.
                 </p>
               </div>
