@@ -8,6 +8,7 @@ import ReactQueryProvider from "@/contexts/query";
 import { Toaster } from "@/components/ui/sonner";
 import Tracking from "@/components/tracking";
 import PageFooter from "@/components/footer";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,11 @@ export default function RootLayout({
         <html lang="en">
           <body className={inter.className}>
             <Tracking />
+            {process.env.NEXT_PUBLIC_ENV !== "production" && (
+              <Script id="reddit-pixel">
+                {`!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_ffz9z2hbrd9k');rdt('track', 'PageVisit');`}
+              </Script>
+            )}
             <PageHeader />
             <main>{children}</main>
             <PageFooter />
