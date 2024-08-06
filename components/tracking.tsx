@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
+import { clarity } from "react-microsoft-clarity";
 
 const Tracking = () => {
   const initializeTracking = () => {
@@ -10,6 +11,7 @@ const Tracking = () => {
     }
 
     ReactGA.initialize([{ trackingId: "G-84NHYJ10KR" }]);
+    clarity.init("nj6mnc82ng");
   };
 
   useEffect(() => {
