@@ -39,7 +39,15 @@ const PageFooter = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <p className="text-white font-bold">info@trueguard.io</p>
+          <div className="flex space-x-4 items-center">
+            <p className="text-white font-bold">info@trueguard.io</p>
+            <Link href="/terms-and-conditions">
+              <p className="text-white text-xs underline">Terms and Conditions</p>
+            </Link>
+            <Link href="/privacy-policy">
+              <p className="text-white text-xs underline">Privacy Policy</p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
