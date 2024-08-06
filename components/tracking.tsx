@@ -8,7 +8,7 @@ import RedditPixel from "react-reddit-pixel";
 
 const Tracking = () => {
   const initializeTracking = () => {
-    if (process.env.NEXT_PUBLIC_ENV !== "production" || !window) {
+    if (process.env.NEXT_PUBLIC_ENV !== "production" || typeof window === "undefined") {
       return;
     }
 
