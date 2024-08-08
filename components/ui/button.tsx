@@ -35,15 +35,21 @@ const buttonVariants = cva(
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   loading?: boolean;
+  loadingText?: string;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ loading = false, children, className, variant, size, asChild = false, ...props }, ref) => {
+  ({ loading = false, loadingText, children, className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp ref={ref} disabled={loading} className={cn(buttonVariants({ variant, size, className }), loading && "text-transparent")} {...props}>
-        {loading && <Loader2 className="absolute animate-spin text-white" />}
-        <Slottable>{children}</Slottable>
+        {loading && (
+          <div className="flex items-center justify-center space-x-2">
+            <Loader2 className="animate-spin text-white" />
+            {loadingText && <span className="text-white">{loadingText}</span>}
+          </div>
+        )}
+        {!loading && <Slottable>{children}</Slottable>}
       </Comp>
     );
   }

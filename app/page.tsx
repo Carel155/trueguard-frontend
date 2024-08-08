@@ -14,6 +14,7 @@ import { FormField } from "@/components/ui/form";
 import { Input as ShadcnInput } from "@/components/ui/input";
 import GetAccessModal from "@/components/pages/main/modal";
 import useGlobalState from "@/hooks/use-global-state";
+import TryItOut from "@/components/pages/main/try-it-out";
 
 const LandingPage = () => {
   const { state, setState } = useGlobalState();
@@ -129,14 +130,7 @@ const LandingPage = () => {
                 />
               </picture>
             </div>
-            <div className="flex flex-col bg-[#1C341A] rounded-lg py-20 px-10">
-              <h4 className="text-2xl font-bold text-white">Try it out!</h4>
-              <p className="pt-10 text-white">Save time and money by automatically blocking free-tier abusers, automated bots, and other threats.</p>
-              <Input name="firstContactEmail" placeholder="Your e-mail" className="mt-10" type="email" />
-              <Button className="bg-accent hover:bg-[#65ad4b] mt-4 w-full text-black" onClick={() => openModalWithEmail("firstContactEmail")}>
-                Request Access
-              </Button>
-            </div>
+            <TryItOut />
           </div>
 
           <div id="features" className="flex flex-col items-center pt-36 px-5 lg:px-0">

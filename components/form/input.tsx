@@ -8,11 +8,12 @@ type InputProps = {
   name: string;
   placeholder: string;
   type: string;
+  optional?: boolean;
   className?: string;
   label?: string;
 };
 
-const Input = ({ name, label, placeholder, className, type }: InputProps) => {
+const Input = ({ name, label, placeholder, className, type, optional }: InputProps) => {
   const form = useFormContext();
 
   return (
@@ -21,7 +22,11 @@ const Input = ({ name, label, placeholder, className, type }: InputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          {label && <FormLabel>{label}</FormLabel>}
+          {label && (
+            <FormLabel className="flex text-white">
+              {label} {optional && <p className="text-xs pl-1 text-gray-400"> - optional</p>}
+            </FormLabel>
+          )}
           <FormControl>
             <ShadcnInput placeholder={placeholder} type={type} className={className} {...field} />
           </FormControl>

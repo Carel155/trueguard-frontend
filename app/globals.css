@@ -83,3 +83,13 @@
       padding-top: 0.5rem;
     }
   }
+
+  .try-highlight {
+    pre {
+      width: 100%;
+
+      code {
+        padding: 10px
+      }
+    }
+  }

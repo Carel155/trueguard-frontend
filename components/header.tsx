@@ -6,20 +6,7 @@ import { Menu } from "lucide-react";
 
 import { Button } from "./ui/button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "./ui/navigation-menu";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import useGlobalState from "@/hooks/use-global-state";
 
 const PageHeader = () => {
@@ -62,7 +49,7 @@ const PageHeader = () => {
             </NavigationMenu>
           </div>
 
-          <Button onClick={() => setState({ ...state, accessDrawerOpen: true })}>Reqeust access</Button>
+          <Button onClick={() => setState({ ...state, accessDrawerOpen: true })}>Request access</Button>
         </div>
 
         <div className="flex md:hidden">
